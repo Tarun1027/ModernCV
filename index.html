@@ -40,7 +40,7 @@
                     <h2>Tarun Singh</h2>
                     <p class="cd-headline loading-bar">
                         <span class="cd-words-wrapper">
-                            <b class="is-visible">UI/UX Designer</b>
+                            <b class="is-visible">Java Developer</b>
                             <b> Javascript Developer</b>
                             <b>Node Js Developer</b>
                         </span>
@@ -84,7 +84,7 @@
                 <div class="left">
                     <h2>I'm Tarun Singh</h2>
                     <p>Full-stack Software Developer and Javascript Enthusiast, Who Likes Building Things In Javascript & Java. 🔥 👨🏽‍💻🏅</p>
-                    <button><a href="https://drive.google.com/file/d/16V3vvvCFpqoznscX7TyFsU66uFipQWED/view?usp=sharing">See My Resume</a></button>
+                    <button><a href="https://drive.google.com/file/d/1GaWat59RxfXoE5ane3tmDuZJDB1_b5FX/view?usp=sharing">See My Resume</a></button>
 
                 </div>
                 <div class="right">
@@ -250,7 +250,7 @@
                         <div><i class="uil uil-envelope"></i></div>
                         <div>
                             <h4>Mail Me:</h4>
-                            <span>tarunsingh2502.com</span>
+                            <span>tarunsingh2502@gmail.com</span>
                         </div>
                     </div>
 
@@ -263,30 +263,41 @@
                     </div>
                 </div>
                 <div class="right">
-                    <form action="">
+                    <form method="post" name="google-sheet" autocomplete="off">
                         <div class="form__group">
                             <div>
                                 <label for="">Name</label>
-                                <input type="text">
+                                <input type="text" name="Name">
                             </div>
                             <div>
                                 <label for="">Email</label>
-                                <input type="email">
+                                <input type="email" name="Email">
                             </div>
                         </div>
 
                         <div class="form__group textarea__wrapper">
                             <div>
                                 <label for="">Message</label>
-                                <textarea name="" id="" cols="30" rows="4"></textarea>
+                                <textarea name="Message" id="" cols="30" rows="4"></textarea>
                             </div>
                         </div>
-                        <button type="submit">Submit Now</button>
+                        <button type="submit" name="submit">Submit Now</button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbygdc4J8vxi_trBHhKo4zR_2SqfXTWuOKahsepRb-Iu3ATaIdNZin1MhSXx52mgBHiZzQ/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting me..!"))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 
     <footer class="container">
         <span>© 2020. All rights reserved</span>
